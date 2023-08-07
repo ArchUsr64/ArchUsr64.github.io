@@ -7,11 +7,54 @@
   --saturation: 58%;
   --lightness: 94%;
   --background: hsl(var(--hue), var(--saturation), var(--lightness));
-  --animation-speed: 0.1s;
+  --animation-speed: 0.3s;
 }
 
 body {
   background-image: linear-gradient(var(--background), hsl(var(--hue), calc(var(--saturation) + 35%), calc(var(--lightness) - 10%)));
+}
+
+.header {
+  display: flex;
+}
+
+.header #resume {
+  position: relative;
+  font-weight: bold;
+  color: hsl(var(--hue), calc(var(--saturation)), calc(var(--lightness)));
+  background-color: hsl(var(--hue), calc(var(--saturation)), calc(var(--lightness) - 50%));
+  animation: color_out var(--animation-speed) ease-in;
+  font-size: 2.5em;
+  padding: 10px;
+  border: 10px solid hsl(var(--hue), calc(var(--saturation) + 20%), calc(var(--lightness) - 20%));
+  border-radius: 15px;
+  text-decoration: none;
+  margin-left: auto;
+}
+
+.header #resume:hover {
+  animation: color_in var(--animation-speed) ease-in;
+  background-color: hsl(var(--hue), calc(var(--saturation)), calc(var(--lightness) - 70%));
+}
+
+@keyframes color_in {
+  0% {
+    background-color: hsl(var(--hue), calc(var(--saturation)), calc(var(--lightness) - 50%));
+  }
+
+  100% {
+    backgroun-color: hsl(var(--hue), calc(var(--saturation)), calc(var(--lightness) - 70%));
+  }
+}
+
+@keyframes color_out {
+  0% {
+    background-color: hsl(var(--hue), calc(var(--saturation)), calc(var(--lightness) - 70%));
+  }
+
+  100% {
+    background-color: hsl(var(--hue), calc(var(--saturation)), calc(var(--lightness) - 50%));
+  }
 }
 
 .greetings {
