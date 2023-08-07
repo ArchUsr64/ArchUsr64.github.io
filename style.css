@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --hue: 35;
+  --saturation: 58%;
+  --lightness: 94%;
+  --background: hsl(var(--hue), var(--saturation), var(--lightness));
+  --animation-speed: 0.1s;
+}
+
+body {
+  background-image: linear-gradient(var(--background), hsl(var(--hue), calc(var(--saturation) + 35%), calc(var(--lightness) - 10%)));
+}
+
+.greetings {
+  height: 95vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.greetings #message {
+  width: 40%;
+  margin: 10px;
+  color: #5fb3e0;
+  font-size: 2em;
+}
+
+.greetings #profile_photo {
+  height: 90%;
+  border-radius: 30px;
+  animation: down-pop var(--animation-speed) ease-in;
+  box-shadow: 30px 30px 55px hsl(var(--hue), calc(var(--saturation)), calc(var(--lightness) - 50%));
+}
+
+.greetings #profile_photo:hover {
+  animation: up-pop var(--animation-speed) ease-in;
+  height: 95%;
+}
+
+@keyframes up-pop {
+  0% {
+    height: 90%;
+  }
+
+  100% {
+    height: 95%;
+  }
+}
+
+@keyframes down-pop {
+  0% {
+    height: 95%;
+  }
+
+  100% {
+    height: 90%;
+  }
+}
