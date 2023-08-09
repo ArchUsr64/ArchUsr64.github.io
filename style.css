@@ -15,7 +15,14 @@ body {
 }
 
 .header {
+  height: 10vh;
   display: flex;
+  align-items: center;
+}
+
+.header #github img {
+  height: 100px;
+  width: auto;
 }
 
 .header #resume {
@@ -58,7 +65,7 @@ body {
 }
 
 .greetings {
-  height: 95vh;
+  height: 90vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
