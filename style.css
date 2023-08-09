@@ -7,6 +7,7 @@
   --saturation: 58%;
   --lightness: 94%;
   --background: hsl(var(--hue), var(--saturation), var(--lightness));
+  --text-color: #5fb3e0;
   --animation-speed: 0.3s;
 }
 
@@ -37,6 +38,7 @@ body {
   border-radius: 15px;
   text-decoration: none;
   margin-left: auto;
+  box-shadow: 10px 10px 10px hsl(var(--hue), calc(var(--saturation)), calc(var(--lightness) - 50%));
 }
 
 .header #resume:hover {
@@ -75,7 +77,7 @@ body {
 .greetings #message {
   width: 40%;
   margin: 10px;
-  color: #5fb3e0;
+  color: var(--text-color);
   font-size: 2em;
 }
 
